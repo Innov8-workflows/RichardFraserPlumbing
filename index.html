@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richard Fraser Plumbing & Heating | Alfreton, Derbyshire</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fff;
+        }
+
+        /* ===== BRAND COLOURS ===== */
+        :root {
+            --primary: #1B3A5C;
+            --primary-light: #2a5580;
+            --accent: #E8A838;
+            --accent-dark: #c98a1e;
+            --light-bg: #F4F6F8;
+            --dark-bg: #0F2236;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #6b7280;
+            --star: #FBBF24;
+        }
+
+        /* ===== HEADER / NAV ===== */
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 24px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--white);
+        }
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--accent);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+        .logo-text h1 {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .logo-text span {
+            font-size: 12px;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+        .nav-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .nav-phone {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-accent {
+            background: var(--accent);
+            color: var(--primary);
+        }
+        .btn-accent:hover { background: var(--accent-dark); }
+        .btn-outline {
+            border: 2px solid var(--accent);
+            color: var(--accent);
+            background: transparent;
+        }
+        .btn-outline:hover { background: var(--accent); color: var(--primary); }
+
+        /* ===== HERO ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary) 100%);
+            color: var(--white);
+            padding: 80px 24px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            background: url('images/photo1.jpg') center/cover no-repeat;
+            opacity: 0.12;
+        }
+        .hero-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h2 {
+            font-size: 44px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 16px;
+        }
+        .hero-content h2 span { color: var(--accent); }
+        .hero-content p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 500px;
+        }
+        .hero-badges {
+            display: flex;
+            gap: 24px;
+            margin-top: 32px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+        .badge-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(232,168,56,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .hero-image {
+            display: flex;
+            gap: 12px;
+        }
+        .hero-image img {
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            object-fit: cover;
+        }
+        .hero-img-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .hero-img-col:first-child { margin-top: 40px; }
+        .hero-img-col img { width: 200px; height: 240px; }
+
+        /* ===== RATING BANNER ===== */
+        .rating-banner {
+            background: var(--accent);
+            color: var(--primary);
+            text-align: center;
+            padding: 16px 24px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .rating-banner .stars { font-size: 22px; margin: 0 8px; }
+
+        /* ===== SERVICES ===== */
+        .services {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        .section-header p {
+            color: var(--text-light);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .accent-line {
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 16px auto 0;
+            border-radius: 2px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--light-bg);
+            padding: 36px 28px;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--primary);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 28px;
+        }
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* ===== BEFORE / AFTER SLIDER ===== */
+        .before-after-section {
+            padding: 80px 24px;
+            background: var(--light-bg);
+        }
+        .slider-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            aspect-ratio: 4/3;
+            cursor: ew-resize;
+            user-select: none;
+        }
+        .slider-container img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .img-before {
+            z-index: 1;
+            clip-path: inset(0 50% 0 0);
+        }
+        .img-after {
+            z-index: 0;
+        }
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--white);
+            z-index: 3;
+            transform: translateX(-50%);
+            pointer-events: none;
+        }
+        .slider-handle::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+        .slider-handle::after {
+            content: '\2B0C';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            color: var(--primary);
+            z-index: 4;
+        }
+        .slider-label {
+            position: absolute;
+            bottom: 20px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            z-index: 5;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .label-before {
+            left: 20px;
+            background: rgba(220,38,38,0.85);
+            color: white;
+        }
+        .label-after {
+            right: 20px;
+            background: rgba(22,163,74,0.85);
+            color: white;
+        }
+
+        /* ===== GALLERY ===== */
+        .gallery {
+            padding: 80px 24px;
+            background: var(--white);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .gallery-grid img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        .gallery-grid img:hover { transform: scale(1.03); }
+
+        /* ===== REVIEWS ===== */
+        .reviews {
+            padding: 80px 24px;
+            background: var(--light-bg);
+        }
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .review-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            position: relative;
+        }
+        .review-card::before {
+            content: '\201C';
+            font-size: 60px;
+            color: var(--accent);
+            position: absolute;
+            top: 12px;
+            left: 24px;
+            line-height: 1;
+            font-family: Georgia, serif;
+        }
+        .review-stars {
+            color: var(--star);
+            font-size: 18px;
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+        .review-text {
+            font-size: 15px;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .review-avatar {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .review-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 14px;
+        }
+        .review-date {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+        .review-source {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: 4px;
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* ===== CONTACT / CTA ===== */
+        .contact {
+            padding: 80px 24px;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, var(--primary) 100%);
+            color: var(--white);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+        .contact h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .contact h2 span { color: var(--accent); }
+        .contact p {
+            opacity: 0.85;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .contact-item-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(232,168,56,0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+        .contact-item-text a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .contact-item-text small {
+            display: block;
+            opacity: 0.7;
+            font-size: 13px;
+        }
+        .contact-form {
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .contact-form h3 {
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            background: rgba(255,255,255,0.06);
+            color: var(--white);
+            font-size: 14px;
+            font-family: inherit;
+        }
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+        .form-group textarea { height: 100px; resize: vertical; }
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .form-submit:hover { background: var(--accent-dark); }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #0a1929;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 30px 24px;
+            font-size: 14px;
+        }
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 900px) {
+            .hero-inner { grid-template-columns: 1fr; text-align: center; }
+            .hero-content p { margin: 0 auto 32px; }
+            .hero-image { justify-content: center; }
+            .hero-badges { justify-content: center; }
+            .services-grid { grid-template-columns: 1fr; }
+            .reviews-grid { grid-template-columns: 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-content h2 { font-size: 32px; }
+            .nav-cta .btn { display: none; }
+        }
+        @media (max-width: 600px) {
+            .hero-img-col img { width: 150px; height: 180px; }
+            .gallery-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            header { position: static; }
+            .hero { padding: 40px 24px; }
+            .service-card:hover, .gallery-grid img:hover { transform: none; }
+            .contact-form { display: none; }
+            * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+    <div class="nav-inner">
+        <a href="#" class="logo">
+            <div class="logo-icon">RF</div>
+            <div class="logo-text">
+                <h1>Richard Fraser</h1>
+                <span>Plumbing & Heating</span>
+            </div>
+        </a>
+        <div class="nav-cta">
+            <a href="tel:07970848445" class="nav-phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                07970 848445
+            </a>
+            <a href="#contact" class="btn btn-accent">Get a Free Quote</a>
+        </div>
+    </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+    <div class="hero-inner">
+        <div class="hero-content">
+            <h2>Your Local <span>Trusted</span> Plumber in Alfreton</h2>
+            <p>Over 20 years of experience in plumbing, heating and bathroom installations across Derbyshire. Rated 4.9/5 by our customers.</p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+                <a href="tel:07970848445" class="btn btn-accent" style="font-size:16px; padding: 14px 32px;">Call Now: 07970 848445</a>
+                <a href="#gallery" class="btn btn-outline">See Our Work</a>
+            </div>
+            <div class="hero-badges">
+                <div class="badge">
+                    <div class="badge-icon">&#9734;</div>
+                    <div>4.9/5 Rating<br><small>59 Google Reviews</small></div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">&#128736;</div>
+                    <div>20+ Years<br><small>Experience</small></div>
+                </div>
+                <div class="badge">
+                    <div class="badge-icon">&#9201;</div>
+                    <div>Same Day<br><small>Service Available</small></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-img-col">
+                <img src="images/photo2.jpg" alt="Modern bathroom renovation by Richard Fraser Plumbing">
+                <img src="images/photo3.jpg" alt="Shower installation by Richard Fraser Plumbing">
+            </div>
+            <div class="hero-img-col">
+                <img src="images/photo4.jpg" alt="Walk-in shower installation with grab rails">
+                <img src="images/photo1.jpg" alt="Boiler servicing and maintenance">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RATING BANNER ===== -->
+<div class="rating-banner">
+    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+    Rated <strong>4.9 out of 5</strong> from <strong>59 verified Google reviews</strong>
+    <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Our Services</h2>
+            <p>From emergency repairs to full bathroom renovations, we've got you covered.</p>
+            <div class="accent-line"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 10h18M3 14h18M12 3v18"/><circle cx="12" cy="12" r="9"/></svg>
+                </div>
+                <h3>Plumbing Repairs</h3>
+                <p>Leaking taps, burst pipes, blocked drains and all general plumbing repairs handled quickly and professionally.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 10h20"/><path d="M12 4v16"/></svg>
+                </div>
+                <h3>Boiler Servicing</h3>
+                <p>Annual boiler servicing, repairs and new installations. Keep your home warm and safe year-round.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                </div>
+                <h3>Bathroom Renovations</h3>
+                <p>Complete bathroom design and installation. Transform your space with a stunning new bathroom.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2v8l4-2"/><circle cx="12" cy="14" r="8"/></svg>
+                </div>
+                <h3>Central Heating</h3>
+                <p>Radiator installation, powerflush, underfloor heating and full central heating system design.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <h3>Emergency Callouts</h3>
+                <p>Available for emergency plumbing and heating issues. Weekends and evenings covered.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4"/></svg>
+                </div>
+                <h3>Kitchen Plumbing</h3>
+                <p>Kitchen tap replacements, dishwasher and washing machine connections, waste disposal fitting.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BEFORE / AFTER ===== -->
+<section class="before-after-section" id="gallery">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>See the Transformation</h2>
+            <p>Drag the slider to see the difference our bathroom renovations make.</p>
+            <div class="accent-line"></div>
+        </div>
+        <div class="slider-container" id="baSlider">
+            <img src="images/photo3.jpg" alt="Before - old bathroom" class="img-before" id="imgBefore">
+            <img src="images/photo2.jpg" alt="After - renovated bathroom" class="img-after">
+            <div class="slider-handle" id="sliderHandle"></div>
+            <span class="slider-label label-before">Before</span>
+            <span class="slider-label label-after">After</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="gallery">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>Our Recent Work</h2>
+            <p>A selection of our completed plumbing and bathroom projects across Derbyshire.</p>
+            <div class="accent-line"></div>
+        </div>
+        <div class="gallery-grid">
+            <img src="images/photo1.jpg" alt="Boiler servicing and repair">
+            <img src="images/photo2.jpg" alt="Modern walk-in shower bathroom renovation">
+            <img src="images/photo3.jpg" alt="Quadrant shower enclosure installation">
+            <img src="images/photo4.jpg" alt="Accessible walk-in shower with grab rails">
+        </div>
+    </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+    <div class="section-inner">
+        <div class="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Don't just take our word for it - here's what our customers think.</p>
+            <div class="accent-line"></div>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">Richard and his team always provide an excellent reliable, and friendly service. I highly recommend him for any plumbing work.</p>
+                <div class="review-author">
+                    <div class="review-avatar">JP</div>
+                    <div>
+                        <div class="review-name">John Poole</div>
+                        <div class="review-date">4 weeks ago</div>
+                        <div class="review-source">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            Google Review
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">Had a small job with a leaking toilet, noticed on a Saturday. Called a few plumbers but none could get till Monday. Called Richard and he arranged to come Sunday morning. Came on time and only took him 5 mins. Excellent service and very happy with price. Will definitely recommend!</p>
+                <div class="review-author">
+                    <div class="review-avatar">GG</div>
+                    <div>
+                        <div class="review-name">Graeme Goulding</div>
+                        <div class="review-date">7 months ago</div>
+                        <div class="review-source">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            Google Review
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                <p class="review-text">First called them to replace my kitchen tap and got a quote for a bathroom renovation and all I can say is WOW. It's stunning! Really nice guys, polite, professional and didn't seem to mind when I asked a daft question or two.</p>
+                <div class="review-author">
+                    <div class="review-avatar">AP</div>
+                    <div>
+                        <div class="review-name">Allie Pickup</div>
+                        <div class="review-date">3 years ago</div>
+                        <div class="review-source">
+                            <svg width="14" height="14" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                            Google Review
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+    <div class="section-inner">
+        <div class="contact-grid">
+            <div>
+                <h2>Get in Touch for a <span>Free Quote</span></h2>
+                <p>Whether it's an emergency repair or a full bathroom renovation, get in touch today. No call-out charge and free, no-obligation quotes.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <a href="tel:07970848445">07970 848445</a>
+                            <small>Mon-Fri 8:30am-6pm | Sat-Sun 9am-6pm</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <a href="mailto:info@richardfraserplumbingandheating.co.uk">info@richardfraserplumbingandheating.co.uk</a>
+                            <small>We'll get back to you within 24 hours</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <a href="#">16 Limes Ave, Alfreton DE55 7DW</a>
+                            <small>Covering Alfreton and all of Derbyshire</small>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-item-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="#E8A838"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </div>
+                        <div class="contact-item-text">
+                            <a href="https://www.facebook.com/Richardfraserplumbingandheating/" target="_blank">Follow us on Facebook</a>
+                            <small>Richard Fraser Plumbing and Heating - Derby</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Request a Free Quote</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tell us about the job..."></textarea>
+                </div>
+                <button class="form-submit" type="button">Send Enquiry</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <p>&copy; 2025 Richard Fraser Plumbing & Heating. All rights reserved. | 16 Limes Ave, Alfreton DE55 7DW | <a href="tel:07970848445">07970 848445</a></p>
+</footer>
+
+<!-- ===== BEFORE/AFTER SLIDER JS ===== -->
+<script>
+(function() {
+    const slider = document.getElementById('baSlider');
+    const imgBefore = document.getElementById('imgBefore');
+    const handle = document.getElementById('sliderHandle');
+    let isDragging = false;
+
+    function updateSlider(x) {
+        const rect = slider.getBoundingClientRect();
+        let pos = (x - rect.left) / rect.width;
+        pos = Math.max(0.05, Math.min(0.95, pos));
+        const pct = pos * 100;
+        imgBefore.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+        handle.style.left = pct + '%';
+    }
+
+    slider.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        updateSlider(e.clientX);
+    });
+    document.addEventListener('mousemove', function(e) {
+        if (isDragging) {
+            e.preventDefault();
+            updateSlider(e.clientX);
+        }
+    });
+    document.addEventListener('mouseup', function() {
+        isDragging = false;
+    });
+
+    // Touch support
+    slider.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        updateSlider(e.touches[0].clientX);
+    });
+    document.addEventListener('touchmove', function(e) {
+        if (isDragging) {
+            updateSlider(e.touches[0].clientX);
+        }
+    });
+    document.addEventListener('touchend', function() {
+        isDragging = false;
+    });
+})();
+</script>
+
+</body>
+</html>
