@@ -125,7 +125,7 @@
             content: '';
             position: absolute;
             top: 0; right: 0; bottom: 0; left: 0;
-            background: url('images/photo1.jpg') center/cover no-repeat;
+            background: url('photo1.jpg') center/cover no-repeat;
             opacity: 0.12;
         }
         .hero-inner {
@@ -642,12 +642,12 @@
         </div>
         <div class="hero-image">
             <div class="hero-img-col">
-                <img src="images/photo2.jpg" alt="Modern bathroom renovation by Richard Fraser Plumbing">
-                <img src="images/photo3.jpg" alt="Shower installation by Richard Fraser Plumbing">
+                <img src="photo2.jpg" alt="Modern bathroom renovation by Richard Fraser Plumbing">
+                <img src="photo3.jpg" alt="Shower installation by Richard Fraser Plumbing">
             </div>
             <div class="hero-img-col">
-                <img src="images/photo4.jpg" alt="Walk-in shower installation with grab rails">
-                <img src="images/photo1.jpg" alt="Boiler servicing and maintenance">
+                <img src="photo4.jpg" alt="Walk-in shower installation with grab rails">
+                <img src="photo1.jpg" alt="Boiler servicing and maintenance">
             </div>
         </div>
     </div>
@@ -724,8 +724,8 @@
             <div class="accent-line"></div>
         </div>
         <div class="slider-container" id="baSlider">
-            <img src="images/photo3.jpg" alt="Before - old bathroom" class="img-before" id="imgBefore">
-            <img src="images/photo2.jpg" alt="After - renovated bathroom" class="img-after">
+            <img src="photo3.jpg" alt="Before - old bathroom" class="img-before" id="imgBefore">
+            <img src="photo2.jpg" alt="After - renovated bathroom" class="img-after">
             <div class="slider-handle" id="sliderHandle"></div>
             <span class="slider-label label-before">Before</span>
             <span class="slider-label label-after">After</span>
@@ -742,10 +742,10 @@
             <div class="accent-line"></div>
         </div>
         <div class="gallery-grid">
-            <img src="images/photo1.jpg" alt="Boiler servicing and repair">
-            <img src="images/photo2.jpg" alt="Modern walk-in shower bathroom renovation">
-            <img src="images/photo3.jpg" alt="Quadrant shower enclosure installation">
-            <img src="images/photo4.jpg" alt="Accessible walk-in shower with grab rails">
+            <img src="photo1.jpg" alt="Boiler servicing and repair">
+            <img src="photo2.jpg" alt="Modern walk-in shower bathroom renovation">
+            <img src="photo3.jpg" alt="Quadrant shower enclosure installation">
+            <img src="photo4.jpg" alt="Accessible walk-in shower with grab rails">
         </div>
     </div>
 </section>
@@ -830,7 +830,7 @@
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E8A838" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                         </div>
                         <div class="contact-item-text">
-                            <a href="mailto:info@richardfraserplumbingandheating.co.uk">info@richardfraserplumbingandheating.co.uk</a>
+                            <a href="/cdn-cgi/l/email-protection#543d3a323b14263d373c35263032263527312624382139363d3a33353a303c3135203d3a337a373b7a213f"><span class="__cf_email__" data-cfemail="91f8fff7fed1e3f8f2f9f0e3f5f7e3f0e2f4e3e1fde4fcf3f8fff6f0fff5f9f4f0e5f8fff6bff2febfe4fa">[email&#160;protected]</span></a>
                             <small>We'll get back to you within 24 hours</small>
                         </div>
                     </div>
@@ -880,7 +880,7 @@
 </footer>
 
 <!-- ===== BEFORE/AFTER SLIDER JS ===== -->
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
     const slider = document.getElementById('baSlider');
     const imgBefore = document.getElementById('imgBefore');
@@ -913,18 +913,4 @@
     // Touch support
     slider.addEventListener('touchstart', function(e) {
         isDragging = true;
-        updateSlider(e.touches[0].clientX);
-    });
-    document.addEventListener('touchmove', function(e) {
-        if (isDragging) {
-            updateSlider(e.touches[0].clientX);
-        }
-    });
-    document.addEventListener('touchend', function() {
-        isDragging = false;
-    });
-})();
-</script>
-
-</body>
-</html>
+        updateSlider(e.touches[0].cl
